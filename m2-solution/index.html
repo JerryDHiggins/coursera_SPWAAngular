@@ -1,0 +1,44 @@
+<!doctype html>
+<html ng-app="app">
+<html lang="en">
+
+<head>
+    <title>Shopping List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <script src="js/angular.js"></script>
+    <script src="js/app.js"></script>
+    <style>
+    .message {
+        font-size: 1.3em;
+        font-weight: bold;
+    }
+    </style>
+</head>
+
+<body>
+    <h1>Shopping List</h1>
+    <h3>To Buy</h3>
+    <div class="container" ng-controller="ToBuyCtrl as buying">
+        <div ng-if="(buying.buyList.length === 0)" class=message>
+            Everything is bought!
+        </div>
+        <ul>
+            <li ng-repeat="item in buying.buyList">
+                {{item.quantity}} {{item.name}} {{item.bought}}
+                <button class="btn btn-default" ng-click="buying.boughtIt($index)">Bought</button>
+        </ul>
+    </div>
+    <h3>Already Bought</h3>
+    <div class="container" ng-controller="BoughtCtrl as bought">
+        <div ng-if="(bought.boughtList.length === 0)" class=message>
+            Nothing Bought Yet
+        </div>
+        <ul>
+            <li ng-repeat="item in bought.boughtList">
+                Bought {{item.quantity}} {{item.name}}
+        </ul>
+    </div>
+</body>
+
+</html>
