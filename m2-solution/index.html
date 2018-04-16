@@ -27,6 +27,7 @@
             <li ng-repeat="item in buying.buyList">
                 {{item.quantity}} {{item.name}} {{item.bought}}
                 <button class="btn btn-default" ng-click="buying.boughtIt($index)">Bought</button>
+            </li>
         </ul>
     </div>
     <h3>Already Bought</h3>
@@ -37,6 +38,7 @@
         <ul>
             <li ng-repeat="item in bought.boughtList">
                 Bought {{item.quantity}} {{item.name}}
+            </li>
         </ul>
     </div>
 </body>
