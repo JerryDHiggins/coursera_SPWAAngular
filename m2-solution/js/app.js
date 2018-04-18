@@ -14,7 +14,6 @@
         buyCtrl.boughtList = ShoppingListCheckOffService.boughtList;
 
         buyCtrl.boughtIt= function(ix) {
-            buyCtrl.buyList[ix].bought=true;
             buyCtrl.boughtList.push(buyCtrl.buyList[ix]);
             buyCtrl.buyList.splice(ix,1);
         }
@@ -34,28 +33,23 @@
         // list
         var buyList = [{
                 name: "Electric Ladyland",
-                quantity: "3",
-                bought: false
+                quantity: "3"
             },
             {
                 name: "Europe Live '72",
-                quantity: "5",
-                bought: false
+                quantity: "5"
             },
             {
                 name: "Abbey Road",
-                quantity: "4",
-                bought: false
+                quantity: "4"
             },
             {
                 name: "Texas Cannonball",
-                quantity: "5",
-                bought: false
+                quantity: "5"
             },
             {
                 name: "Atom Heart Mother",
-                quantity: "3",
-                bought: false
+                quantity: "3"
             }
         ];
         var boughtList = [];
